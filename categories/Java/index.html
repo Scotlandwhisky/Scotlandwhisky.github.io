@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>spring | 博客|屿哲</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="一、Spring概述开源的，用来简化企业级应用开发的应用开发框架。 我们学习Spring框架的最终目的是用它整合Struts2、Hibernate框架（SSH）。 1.1 Spring框架的作用Spring框架主要负责技术整合（可以整合很多技术），该框架提供IoC和AOP机制，基于这些特性整合，可以降低系统组件之间的耦合度，便于系统组件的维护、扩展和替换。 1.1.1 简化开发: spring对常">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Spring">
+<meta property="og:url" content="http://yuzhe-tech.com/categories/Java/index.html">
+<meta property="og:site_name" content="博客|屿哲">
+<meta property="og:description" content="一、Spring概述开源的，用来简化企业级应用开发的应用开发框架。 我们学习Spring框架的最终目的是用它整合Struts2、Hibernate框架（SSH）。 1.1 Spring框架的作用Spring框架主要负责技术整合（可以整合很多技术），该框架提供IoC和AOP机制，基于这些特性整合，可以降低系统组件之间的耦合度，便于系统组件的维护、扩展和替换。 1.1.1 简化开发: spring对常">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-05-16T09:48:05.738Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Spring">
+<meta name="twitter:description" content="一、Spring概述开源的，用来简化企业级应用开发的应用开发框架。 我们学习Spring框架的最终目的是用它整合Struts2、Hibernate框架（SSH）。 1.1 Spring框架的作用Spring框架主要负责技术整合（可以整合很多技术），该框架提供IoC和AOP机制，基于这些特性整合，可以降低系统组件之间的耦合度，便于系统组件的维护、扩展和替换。 1.1.1 简化开发: spring对常">
+  
+    <link rel="alternate" href="/atom.xml" title="博客|屿哲" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/yuzhe-logo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/yuzhe-logo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+  <script src="/js/bootstrap.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    <link rel="stylesheet" href="/css/dialog.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+    <link rel="stylesheet" href="/css/archive.css" >
+  
+  
+  
+
+</head>
+
+
+
+  <body>
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                 >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/yuzhe-logo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">首页</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">归档</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">分类</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">标签</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">关于</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="page-"  class="article article-type-page" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      Spring
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/categories/Java/index.html" class="article-date">
+	  <time datetime="2018-05-16T10:00:06.467Z" itemprop="datePublished">2018-05-16</time>
+	</a>
+
+      
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、Spring概述"><a href="#一、Spring概述" class="headerlink" title="一、Spring概述"></a>一、<strong>Spring概述</strong></h1><p>开源的，用来简化企业级应用开发的应用开发框架。</p>
+<p>我们学习Spring框架的最终目的是用它整合Struts2、Hibernate框架（SSH）。</p>
+<h2 id="1-1-Spring框架的作用"><a href="#1-1-Spring框架的作用" class="headerlink" title="1.1 Spring框架的作用"></a>1.1 Spring框架的作用</h2><p>Spring框架主要负责技术整合（可以整合很多技术），该框架提供IoC和AOP机制，基于这些特性整合，可以降低系统组件之间的耦合度，便于系统组件的维护、扩展和替换。</p>
+<p>1.1.1 简化开发: spring对常用的一些api（比如jdbc）做了封装，<br>​        这样，代码会大大简化，而且代码质量也会提高（比如，使用<br>​        spring jdbc访问数据库，就不用考虑获取连接与关闭连接）。<br>  1.1.2  解耦: spring可以帮我们管理对象（帮我们创建对象并且管理<br>​        对象之间依赖关系)。这样一来，软件更容易维护。<br>  1.1.3 集成: spring可以集成其它的一些框架（比如，集成任务调度的框架            Quartz等等）。</p>
+<h2 id="1-2-Spring框架的优点"><a href="#1-2-Spring框架的优点" class="headerlink" title="1.2 Spring框架的优点"></a>1.2 Spring框架的优点</h2><a id="more"></a>
+<p>其实与Spring框架的作用相同：</p>
+<p>在SSH中，主要是利用Spring容器管理我们程序中的Action、DAO等组件，通过容器的IoC机制，可以降低Action、DAO之间的耦合度（关联度），利用AOP进行事务管理等共通部分的处理。</p>
+<p>在SSH中，Struts2主要是利用它的控制器，而不是标签、表达式；Hibernate主要利用它的数据库访问；Spring主要是利用它的整合。</p>
+<h2 id="1-3-Spring框架的容器"><a href="#1-3-Spring框架的容器" class="headerlink" title="1.3 Spring框架的容器"></a>1.3 Spring框架的容器</h2><p>​      Spring框架中的一个核心模块，用来管理对象。<br>​    注：管理对象：指的是创建对象、初始化、销毁以及管理对象之间<br>​      的依赖关系。</p>
+<p>Spring框架的核心是提供了一个容器（是我们抽象出来的，代指后面的类型）。该容器类型是BeanFactory(接口)或ApplicationContext（接口）（建议用这个类型，它是BeanFactory的子类，功能更多）。</p>
+<h1 id="二、Spring容器的基本应用"><a href="#二、Spring容器的基本应用" class="headerlink" title="二、Spring容器的基本应用"></a>二、<strong>Spring容器的基本应用</strong></h1><h2 id="2-1如何将一个Bean组件交给Spring容器"><a href="#2-1如何将一个Bean组件交给Spring容器" class="headerlink" title="2.1如何将一个Bean组件交给Spring容器"></a>2.1如何将一个Bean组件交给Spring容器</h2><p>1）Bean组件其实就是个普通的Java类！</p>
+<p>2）方法：在applicationContext.xml中添加以下定义，见2.6案例中step4。</p>
+<pre><code>&lt;bean id=&quot;标识符&quot; class=&quot;Bean组件类型&quot;&gt;&lt;/bean&gt;
+</code></pre><h2 id="2-2如何获取Spring容器对象和Bean对象"><a href="#2-2如何获取Spring容器对象和Bean对象" class="headerlink" title="2.2如何获取Spring容器对象和Bean对象"></a>2.2如何获取Spring容器对象和Bean对象</h2><p>1）实例化容器：</p>
+<p>ApplicationContext ac=new ClassPathXmlApplicationContext(“/applicationContext.xml”);</p>
+<p>//FileSystemXmlApplicationContext(“”);//去指定的磁盘目录找，上面的为去Class路径找</p>
+<p>2）利用getBean(“标识符”)方法获取容器中的Bean对象。见2.6案例中step5。</p>
+<h2 id="2-3如何控制对象创建的模式"><a href="#2-3如何控制对象创建的模式" class="headerlink" title="2.3如何控制对象创建的模式"></a>2.3如何控制对象创建的模式</h2><p>Spring支持singleton（单例）和prototype（原型，非单例）两种模式。</p>
+<p>默认是singleton模式，可以通过<bean>的scope属性修改为prototype模式。以后在Web程序中，通过扩展可以使用request、session等值。见2.6案例中step4、step7。</bean></p>
+<p>例如：<bean id="标识符" scope="prototype" class="Bean组件类型"></bean></p>
+<p>u 注意事项：对于NetCTOSS项目，一个请求创建一个Action，所以用Spring时必须指明prototype，否则默认使用singleton会出问题。而DAO则可用singleton模式。</p>
+<h2 id="2-4-Bean对象创建的时机"><a href="#2-4-Bean对象创建的时机" class="headerlink" title="2.4 Bean对象创建的时机"></a>2.4 Bean对象创建的时机</h2><p>1）singleton模式的Bean组件是在容器实例化时创建。</p>
+<p>2）prototype模式是在调用getBean()方法时创建。</p>
+<p>3）singleton模式可以使用<bean>元素的lazy-init=”true”属性将对象的创建时机推迟到调用getBean()方法。也可以在<beans>（根元素）中使用default-lazy-init=”false”推迟所有单例Bean组件的创建时机。见2.6案例中step3、step4。</beans></bean></p>
+<p>例如：<bean id="标识符" scope="singleton" lazy-init="true" class="Bean组件类型"></bean></p>
+<pre><code>&lt;beans ...... default-lazy-init=&quot;false&quot;&gt;&lt;/beans&gt;
+</code></pre><h2 id="2-5为Bean对象执行初始化和销毁方法"><a href="#2-5为Bean对象执行初始化和销毁方法" class="headerlink" title="2.5为Bean对象执行初始化和销毁方法"></a>2.5为Bean对象执行初始化和销毁方法</h2><p>1）初始化：①可以利用<bean>元素的init-method=”方法名”属性指定初始化方法。</bean></p>
+<p>②指定的初始化方法是在构造方法调用后自动执行。若非单例模式，则每创建一个对象，则执行一次初始化方法（单例、非单例模式都可）。见2.6案例中step3、step4。</p>
+<p>u 注意事项：</p>
+<p>v 初始化的三种方式：写构造方法中；或写{ }中（代码块）；Spring框架中<bean>元素写init-method=”方法名”属性。</bean></p>
+<p>v 初始化不能用static{ }，它是类加载调用，比创建对象要早。</p>
+<p>2）销毁：①可以利用<bean>元素的destroy-method=”方法名”属性执行销毁方法。</bean></p>
+<p>②指定的销毁方法是在容器关闭时触发，而且只适用于singleton模式的组件（只能为单例模式）。见2.6案例中step3、step4、step6。</p>
+<h2 id="2-6案例：Spring框架的使用以及2-1节-2-5节整合测试"><a href="#2-6案例：Spring框架的使用以及2-1节-2-5节整合测试" class="headerlink" title="2.6案例：Spring框架的使用以及2.1节-2.5节整合测试"></a>2.6案例：Spring框架的使用以及2.1节-2.5节整合测试</h2><p>step1：导入Spring开发包：spring.jar、commons-logging.jar和配置文件：applicationContext.xml</p>
+<p>&lt;?xml version=”1.0” encoding=”UTF-8”?&gt;</p>
+<beans xmlns="http://www.springframework.org/schema/beans" ​="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop" xmlns:context="http://www.springframework.org/schema/context" xmlns:jee="http://www.springframework.org/schema/jee" xsi:schemalocation="http://www.springframework.org/schema/tx                                       http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+
+             http://www.springframework.org/schema/aop                                              http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+
+​            http://www.springframework.org/schema/beans                                              http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+
+​            http://www.springframework.org/schema/context                                              http://www.springframework.org/schema/context/spring-context-2.5.xsd
+
+​            http://www.springframework.org/schema/jee                                               http://www.springframework.org/schema/jee/spring-jee-2.5.xsd"><br><br></beans>
+
+<p>step2：在org.tarena.dao包下，创建接口CostDAO，添加两个方法</p>
+<pre><code>public void delete();        public void save();
+</code></pre><p>step3：在org.tarena.dao包下，创建JdbcCostDAO类，并实现CostDAO接口</p>
+<p>public JdbcCostDAO(){        System.out.println(“创建CostDAO对象”);                }</p>
+<p>public void myinit(){        System.out.println(“初始化CostDAO对象”);            }</p>
+<p>public void mydestroy(){    System.out.println(“销毁CostDAO对象”);                }</p>
+<p>public void delete() {    System.out.println(“利用JDBC技术实现删除资费记录”);    }</p>
+<p>public void save() {        System.out.println(“利用JDBC技术实现保存资费记录”);    }</p>
+<p>step4：在applicationContext.xml配置文件中，将Bean组件（Java类）交给Spring容器</p>
+<bean id="jdbcCostDAO" scope="singleton" lazy-init="true" init-method="myinit" destroy-method="mydestroy" class="org.tarena.dao.JdbcCostDAO"><br><br></bean>
+
+<p>step5：在org.tarena.test包下，创建TestApplicationContext类，获取Spring容器对象，并测试</p>
+<p>@Test</p>
+<p>public void test1(){        String conf=”/applicationContext.xml”;</p>
+<p>​    ApplicationContext ac=new ClassPathXmlApplicationContext(conf);//实例化容器</p>
+<p>​    CostDAO costDAO=(CostDAO)ac.getBean(“jdbcCostDAO”);//获取Bean对象</p>
+<p>​    costDAO.save();        costDAO.delete();                                    }</p>
+<p>step6：在TestApplicationContext类中添加方法，测试销毁对象</p>
+<p>@Test</p>
+<p>/*<em>关闭容器才会触发销毁，但关闭容器方法封装在AbstractApplicationContext类中 </em>/</p>
+<p>public void test2(){        String conf=”/applicationContext.xml”;</p>
+<p>​    ApplicationContext ac=new ClassPathXmlApplicationContext(conf);</p>
+<p>​    AbstractApplicationContext ac=new ClassPathXmlApplicationContext(conf);</p>
+<p>​    CostDAO costDAO=(CostDAO)ac.getBean(“jdbcCostDAO”);        ac.close();    }</p>
+<p>step7：在TestApplicationContext类中添加方法，测试单例</p>
+<p>​    @Test</p>
+<p>​    public void test3(){        String conf=”/applicationContext.xml”;</p>
+<p>​        ApplicationContext ac=    new ClassPathXmlApplicationContext(conf);</p>
+<p>​        CostDAO costDAO1=(CostDAO)ac.getBean(“jdbcCostDAO”);</p>
+<p>​        CostDAO costDAO2=(CostDAO)ac.getBean(“jdbcCostDAO”);</p>
+<p>​        System.out.println(costDAO1==costDAO2);//true，所以Spring默认为单例模式    }</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+        
+	<div id="comment">
+		<!-- 来必力City版安装代码 -->
+		<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQ4MS82MDQ5">
+		<script type="text/javascript">
+		   (function(d, s) {
+		       var j, e = d.getElementsByTagName(s)[0];
+
+		       if (typeof LivereTower === 'function') { return; }
+
+		       j = d.createElement(s);
+		       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+		       j.async = true;
+
+		       e.parentNode.insertBefore(j, e);
+		   })(document, 'script');
+		</script>
+		<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+		</div>
+		<!-- City版安装代码已完成 -->
+	</div>
+
+
+
+      
+      
+    </footer>
+  </div>
+  
+    
+  
+</article>
+
+<!-- Table of Contents -->
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <!--<p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>-->
+	      <p id="copyRightEn">Copyright &copy; 2000 - 2018 博客|屿哲 All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				访客数 : <span id="busuanzi_value_site_uv"></span> |  
+				访问量 : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            博客|屿哲
+          </div>
+          <div class="panel-body">
+            Copyright © 2018 Yuzhe Von All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+  <script type="text/javascript" src="/js/love.js?v=1.0.0" async=""></script>
+</body>
+</html>
