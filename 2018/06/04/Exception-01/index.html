@@ -9,17 +9,17 @@
   
   
   
-  <meta name="description" content="异常机制中还有一个重要的部分，就是finally, catch后面可以跟finally语句，语法如下所示：try{    //可能抛出异常}catch(Exception e){    //捕获异常}finally{    //不管有无异常都执行} finally内的代码不管有无异常发生，都会执行。具体来说：如果没有异常发生，在try内的代码执行结束后执行。如果有异常发生且被catch捕获，在ca">
+  <meta name="description" content="（一）异常机制中还有一个重要的部分，就是finally, catch后面可以跟finally语句，语法如下所示：try{     //可能抛出异常 }catch(Exception e){     //捕获异常 }finally{     //不管有无异常都执行 } （二）finally内的代码不管有无异常发生，都会执行。具体来说：如果没有异常发生，在try内的代码执行结束后执行。如果有异常发生且">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Exception-01">
 <meta property="og:url" content="http://yuzhe-tech.com/2018/06/04/Exception-01/index.html">
 <meta property="og:site_name" content="博客|屿哲">
-<meta property="og:description" content="异常机制中还有一个重要的部分，就是finally, catch后面可以跟finally语句，语法如下所示：try{    //可能抛出异常}catch(Exception e){    //捕获异常}finally{    //不管有无异常都执行} finally内的代码不管有无异常发生，都会执行。具体来说：如果没有异常发生，在try内的代码执行结束后执行。如果有异常发生且被catch捕获，在ca">
+<meta property="og:description" content="（一）异常机制中还有一个重要的部分，就是finally, catch后面可以跟finally语句，语法如下所示：try{     //可能抛出异常 }catch(Exception e){     //捕获异常 }finally{     //不管有无异常都执行 } （二）finally内的代码不管有无异常发生，都会执行。具体来说：如果没有异常发生，在try内的代码执行结束后执行。如果有异常发生且">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-04T08:47:30.068Z">
+<meta property="og:updated_time" content="2018-07-04T08:51:18.820Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Exception-01">
-<meta name="twitter:description" content="异常机制中还有一个重要的部分，就是finally, catch后面可以跟finally语句，语法如下所示：try{    //可能抛出异常}catch(Exception e){    //捕获异常}finally{    //不管有无异常都执行} finally内的代码不管有无异常发生，都会执行。具体来说：如果没有异常发生，在try内的代码执行结束后执行。如果有异常发生且被catch捕获，在ca">
+<meta name="twitter:description" content="（一）异常机制中还有一个重要的部分，就是finally, catch后面可以跟finally语句，语法如下所示：try{     //可能抛出异常 }catch(Exception e){     //捕获异常 }finally{     //不管有无异常都执行 } （二）finally内的代码不管有无异常发生，都会执行。具体来说：如果没有异常发生，在try内的代码执行结束后执行。如果有异常发生且">
   
     <link rel="alternate" href="/atom.xml" title="博客|屿哲" type="application/atom+xml">
   
@@ -201,15 +201,42 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="异常机制中还有一个重要的部分，就是finally-catch后面可以跟finally语句，语法如下所示："><a href="#异常机制中还有一个重要的部分，就是finally-catch后面可以跟finally语句，语法如下所示：" class="headerlink" title="异常机制中还有一个重要的部分，就是finally, catch后面可以跟finally语句，语法如下所示："></a>异常机制中还有一个重要的部分，就是finally, catch后面可以跟finally语句，语法如下所示：</h2><p>try{<br>    //可能抛出异常<br>}catch(Exception e){<br>    //捕获异常<br>}finally{<br>    //不管有无异常都执行<br>}</p>
-<h2 id="finally内的代码不管有无异常发生，都会执行。具体来说："><a href="#finally内的代码不管有无异常发生，都会执行。具体来说：" class="headerlink" title="finally内的代码不管有无异常发生，都会执行。具体来说："></a>finally内的代码不管有无异常发生，都会执行。具体来说：</h2><p>如果没有异常发生，在try内的代码执行结束后执行。<br>如果有异常发生且被catch捕获，在catch内的代码执行结束后执行<br>如果有异常发生但没被捕获，则在异常被抛给上层之前执行。<br>由于finally的这个特点，它一般用于释放资源，如数据库连接、文件流等。</p>
+        <h1 id="（一）"><a href="#（一）" class="headerlink" title="（一）"></a>（一）</h1><h2 id="异常机制中还有一个重要的部分，就是finally-catch后面可以跟finally语句，语法如下所示："><a href="#异常机制中还有一个重要的部分，就是finally-catch后面可以跟finally语句，语法如下所示：" class="headerlink" title="异常机制中还有一个重要的部分，就是finally, catch后面可以跟finally语句，语法如下所示："></a>异常机制中还有一个重要的部分，就是finally, catch后面可以跟finally语句，语法如下所示：</h2><pre><code>try{
+    //可能抛出异常
+}catch(Exception e){
+    //捕获异常
+}finally{
+    //不管有无异常都执行
+}
+</code></pre><h1 id="（二）"><a href="#（二）" class="headerlink" title="（二）"></a>（二）</h1><h2 id="finally内的代码不管有无异常发生，都会执行。具体来说："><a href="#finally内的代码不管有无异常发生，都会执行。具体来说：" class="headerlink" title="finally内的代码不管有无异常发生，都会执行。具体来说："></a>finally内的代码不管有无异常发生，都会执行。具体来说：</h2><p>如果没有异常发生，在try内的代码执行结束后执行。<br>如果有异常发生且被catch捕获，在catch内的代码执行结束后执行<br>如果有异常发生但没被捕获，则在异常被抛给上层之前执行。<br>由于finally的这个特点，它一般用于释放资源，如数据库连接、文件流等。</p>
 <p>try/catch/finally语法中，catch不是必需的，也就是可以只有try/finally，表示不捕获异常，异常自动向上传递，但finally中的代码在异常发生后也执行。</p>
-<h2 id="finally语句有一个执行细节，如果在try或者catch语句内有return语句，则return语句在finally语句执行结束后才执行，但finally并不能改变返回值，我们来看下代码："><a href="#finally语句有一个执行细节，如果在try或者catch语句内有return语句，则return语句在finally语句执行结束后才执行，但finally并不能改变返回值，我们来看下代码：" class="headerlink" title="finally语句有一个执行细节，如果在try或者catch语句内有return语句，则return语句在finally语句执行结束后才执行，但finally并不能改变返回值，我们来看下代码："></a>finally语句有一个执行细节，如果在try或者catch语句内有return语句，则return语句在finally语句执行结束后才执行，但finally并不能改变返回值，我们来看下代码：</h2><p>public static int test(){<br>    int ret = 0;<br>    try{<br>        return ret;<br>    }finally{<br>        ret = 2;<br>    }<br>}</p>
-<p>这个函数的返回值是0，而不是2，实际执行过程是，在执行到try内的return ret;语句前，会先将返回值ret保存在一个临时变量中，然后才执行finally语句，最后try再返回那个临时变量，finally中对ret的修改不会被返回。</p>
-<h2 id="如果在finally中也有return语句呢？try和catch内的return会丢失，实际会返回finally中的返回值。finally中有return不仅会覆盖try和catch内的返回值，还会掩盖try和catch内的异常，就像异常没有发生一样，比如说："><a href="#如果在finally中也有return语句呢？try和catch内的return会丢失，实际会返回finally中的返回值。finally中有return不仅会覆盖try和catch内的返回值，还会掩盖try和catch内的异常，就像异常没有发生一样，比如说：" class="headerlink" title="如果在finally中也有return语句呢？try和catch内的return会丢失，实际会返回finally中的返回值。finally中有return不仅会覆盖try和catch内的返回值，还会掩盖try和catch内的异常，就像异常没有发生一样，比如说："></a>如果在finally中也有return语句呢？try和catch内的return会丢失，实际会返回finally中的返回值。finally中有return不仅会覆盖try和catch内的返回值，还会掩盖try和catch内的异常，就像异常没有发生一样，比如说：</h2><p>public static int test(){<br>    int ret = 0;<br>    try{<br>        int a = 5/0;<br>        return ret;<br>    }finally{<br>        return 2;<br>    }<br>}</p>
-<p>以上代码中，5/0会触发ArithmeticException，但是finally中有return语句，这个方法就会返回2，而不再向上传递异常了。</p>
-<h2 id="finally中不仅return语句会掩盖异常，如果finally中抛出了异常，则原异常就会被掩盖，看下面代码："><a href="#finally中不仅return语句会掩盖异常，如果finally中抛出了异常，则原异常就会被掩盖，看下面代码：" class="headerlink" title="finally中不仅return语句会掩盖异常，如果finally中抛出了异常，则原异常就会被掩盖，看下面代码："></a>finally中不仅return语句会掩盖异常，如果finally中抛出了异常，则原异常就会被掩盖，看下面代码：</h2><p>public static void test(){<br>    try{<br>        int a = 5/0;<br>    }finally{<br>        throw new RuntimeException(“hello”);<br>    }<br>}</p>
-<p>finally中抛出了RuntimeException，则原异常ArithmeticException就丢失了。</p>
+<h1 id="（三）"><a href="#（三）" class="headerlink" title="（三）"></a>（三）</h1><h2 id="finally语句有一个执行细节，如果在try或者catch语句内有return语句，则return语句在finally语句执行结束后才执行，但finally并不能改变返回值，我们来看下代码："><a href="#finally语句有一个执行细节，如果在try或者catch语句内有return语句，则return语句在finally语句执行结束后才执行，但finally并不能改变返回值，我们来看下代码：" class="headerlink" title="finally语句有一个执行细节，如果在try或者catch语句内有return语句，则return语句在finally语句执行结束后才执行，但finally并不能改变返回值，我们来看下代码："></a>finally语句有一个执行细节，如果在try或者catch语句内有return语句，则return语句在finally语句执行结束后才执行，但finally并不能改变返回值，我们来看下代码：</h2><pre><code>public static int test(){
+    int ret = 0;
+    try{
+        return ret;
+    }finally{
+        ret = 2;
+    }
+}
+</code></pre><p>这个函数的返回值是0，而不是2，实际执行过程是，在执行到try内的return ret;语句前，会先将返回值ret保存在一个临时变量中，然后才执行finally语句，最后try再返回那个临时变量，finally中对ret的修改不会被返回。</p>
+<h1 id="（四）"><a href="#（四）" class="headerlink" title="（四）"></a>（四）</h1><h2 id="如果在finally中也有return语句呢？try和catch内的return会丢失，实际会返回finally中的返回值。finally中有return不仅会覆盖try和catch内的返回值，还会掩盖try和catch内的异常，就像异常没有发生一样，比如说："><a href="#如果在finally中也有return语句呢？try和catch内的return会丢失，实际会返回finally中的返回值。finally中有return不仅会覆盖try和catch内的返回值，还会掩盖try和catch内的异常，就像异常没有发生一样，比如说：" class="headerlink" title="如果在finally中也有return语句呢？try和catch内的return会丢失，实际会返回finally中的返回值。finally中有return不仅会覆盖try和catch内的返回值，还会掩盖try和catch内的异常，就像异常没有发生一样，比如说："></a>如果在finally中也有return语句呢？try和catch内的return会丢失，实际会返回finally中的返回值。finally中有return不仅会覆盖try和catch内的返回值，还会掩盖try和catch内的异常，就像异常没有发生一样，比如说：</h2><pre><code>public static int test(){
+    int ret = 0;
+    try{
+        int a = 5/0;
+        return ret;
+    }finally{
+        return 2;
+    }
+}
+</code></pre><p>以上代码中，5/0会触发ArithmeticException，但是finally中有return语句，这个方法就会返回2，而不再向上传递异常了。</p>
+<h1 id="（五）"><a href="#（五）" class="headerlink" title="（五）"></a>（五）</h1><h2 id="finally中不仅return语句会掩盖异常，如果finally中抛出了异常，则原异常就会被掩盖，看下面代码："><a href="#finally中不仅return语句会掩盖异常，如果finally中抛出了异常，则原异常就会被掩盖，看下面代码：" class="headerlink" title="finally中不仅return语句会掩盖异常，如果finally中抛出了异常，则原异常就会被掩盖，看下面代码："></a>finally中不仅return语句会掩盖异常，如果finally中抛出了异常，则原异常就会被掩盖，看下面代码：</h2><pre><code>public static void test(){
+    try{
+        int a = 5/0;
+    }finally{
+        throw new RuntimeException(&quot;hello&quot;);
+    }
+}
+</code></pre><p>finally中抛出了RuntimeException，则原异常ArithmeticException就丢失了。</p>
 <h2 id="一般而言，为避免混淆，应该避免在finally中使用return语句或者抛出异常，如果调用的其他代码可能抛出异常，则应该捕获异常并进行处理。"><a href="#一般而言，为避免混淆，应该避免在finally中使用return语句或者抛出异常，如果调用的其他代码可能抛出异常，则应该捕获异常并进行处理。" class="headerlink" title="一般而言，为避免混淆，应该避免在finally中使用return语句或者抛出异常，如果调用的其他代码可能抛出异常，则应该捕获异常并进行处理。"></a>一般而言，为避免混淆，应该避免在finally中使用return语句或者抛出异常，如果调用的其他代码可能抛出异常，则应该捕获异常并进行处理。</h2>
       
     </div>
@@ -265,7 +292,7 @@
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#异常机制中还有一个重要的部分，就是finally-catch后面可以跟finally语句，语法如下所示："><span class="nav-number">1.</span> <span class="nav-text">异常机制中还有一个重要的部分，就是finally, catch后面可以跟finally语句，语法如下所示：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#finally内的代码不管有无异常发生，都会执行。具体来说："><span class="nav-number">2.</span> <span class="nav-text">finally内的代码不管有无异常发生，都会执行。具体来说：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#finally语句有一个执行细节，如果在try或者catch语句内有return语句，则return语句在finally语句执行结束后才执行，但finally并不能改变返回值，我们来看下代码："><span class="nav-number">3.</span> <span class="nav-text">finally语句有一个执行细节，如果在try或者catch语句内有return语句，则return语句在finally语句执行结束后才执行，但finally并不能改变返回值，我们来看下代码：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如果在finally中也有return语句呢？try和catch内的return会丢失，实际会返回finally中的返回值。finally中有return不仅会覆盖try和catch内的返回值，还会掩盖try和catch内的异常，就像异常没有发生一样，比如说："><span class="nav-number">4.</span> <span class="nav-text">如果在finally中也有return语句呢？try和catch内的return会丢失，实际会返回finally中的返回值。finally中有return不仅会覆盖try和catch内的返回值，还会掩盖try和catch内的异常，就像异常没有发生一样，比如说：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#finally中不仅return语句会掩盖异常，如果finally中抛出了异常，则原异常就会被掩盖，看下面代码："><span class="nav-number">5.</span> <span class="nav-text">finally中不仅return语句会掩盖异常，如果finally中抛出了异常，则原异常就会被掩盖，看下面代码：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一般而言，为避免混淆，应该避免在finally中使用return语句或者抛出异常，如果调用的其他代码可能抛出异常，则应该捕获异常并进行处理。"><span class="nav-number">6.</span> <span class="nav-text">一般而言，为避免混淆，应该避免在finally中使用return语句或者抛出异常，如果调用的其他代码可能抛出异常，则应该捕获异常并进行处理。</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#（一）"><span class="nav-number">1.</span> <span class="nav-text">（一）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#异常机制中还有一个重要的部分，就是finally-catch后面可以跟finally语句，语法如下所示："><span class="nav-number">1.1.</span> <span class="nav-text">异常机制中还有一个重要的部分，就是finally, catch后面可以跟finally语句，语法如下所示：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#（二）"><span class="nav-number">2.</span> <span class="nav-text">（二）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#finally内的代码不管有无异常发生，都会执行。具体来说："><span class="nav-number">2.1.</span> <span class="nav-text">finally内的代码不管有无异常发生，都会执行。具体来说：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#（三）"><span class="nav-number">3.</span> <span class="nav-text">（三）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#finally语句有一个执行细节，如果在try或者catch语句内有return语句，则return语句在finally语句执行结束后才执行，但finally并不能改变返回值，我们来看下代码："><span class="nav-number">3.1.</span> <span class="nav-text">finally语句有一个执行细节，如果在try或者catch语句内有return语句，则return语句在finally语句执行结束后才执行，但finally并不能改变返回值，我们来看下代码：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#（四）"><span class="nav-number">4.</span> <span class="nav-text">（四）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如果在finally中也有return语句呢？try和catch内的return会丢失，实际会返回finally中的返回值。finally中有return不仅会覆盖try和catch内的返回值，还会掩盖try和catch内的异常，就像异常没有发生一样，比如说："><span class="nav-number">4.1.</span> <span class="nav-text">如果在finally中也有return语句呢？try和catch内的return会丢失，实际会返回finally中的返回值。finally中有return不仅会覆盖try和catch内的返回值，还会掩盖try和catch内的异常，就像异常没有发生一样，比如说：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#（五）"><span class="nav-number">5.</span> <span class="nav-text">（五）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#finally中不仅return语句会掩盖异常，如果finally中抛出了异常，则原异常就会被掩盖，看下面代码："><span class="nav-number">5.1.</span> <span class="nav-text">finally中不仅return语句会掩盖异常，如果finally中抛出了异常，则原异常就会被掩盖，看下面代码：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一般而言，为避免混淆，应该避免在finally中使用return语句或者抛出异常，如果调用的其他代码可能抛出异常，则应该捕获异常并进行处理。"><span class="nav-number">5.2.</span> <span class="nav-text">一般而言，为避免混淆，应该避免在finally中使用return语句或者抛出异常，如果调用的其他代码可能抛出异常，则应该捕获异常并进行处理。</span></a></li></ol></li></ol>
     
     </div>
   </aside>
