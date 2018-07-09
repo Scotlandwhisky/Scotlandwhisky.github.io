@@ -6,10 +6,6 @@ mobileplay();
 
 document.addEventListener("WeixinJSBridgeReady", mobileplay);
 
-$('html').one('touchstart',function(){
-    el.play();
-});
-
 function play(){
     $('#music')[0].play();
     $('.music_btn').addClass('music_anim');
