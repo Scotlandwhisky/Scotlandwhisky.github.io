@@ -1,3 +1,12 @@
+var el = document.getElementsByTagName("audio")[0],
+
+mobileplay = function() {el.play()};
+
+mobileplay();
+
+document.addEventListener("WeixinJSBridgeReady", mobileplay);
+
+
 function play(){
     $('#music')[0].play();
     $('.music_btn').addClass('music_anim');
