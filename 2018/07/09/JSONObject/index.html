@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>jsonobject与jsonarray | 博客|屿哲</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  
+  <meta name="description" content="需要导入一下jar包12import net.sf.json.JSONArray;import net.sf.json.JSONObject; 一：JSONObject//创建JSONObject 1.创建一个空的JSONObject对象JSONObject json=new JSONObject(); 2.创建一个不为null的JSONObject对象JSONObject json=new JS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSONOBject与JSONArray">
+<meta property="og:url" content="http://yuzhe-tech.com/2018/07/09/JSONObject/index.html">
+<meta property="og:site_name" content="博客|屿哲">
+<meta property="og:description" content="需要导入一下jar包12import net.sf.json.JSONArray;import net.sf.json.JSONObject; 一：JSONObject//创建JSONObject 1.创建一个空的JSONObject对象JSONObject json=new JSONObject(); 2.创建一个不为null的JSONObject对象JSONObject json=new JS">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-10T09:51:24.983Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JSONOBject与JSONArray">
+<meta name="twitter:description" content="需要导入一下jar包12import net.sf.json.JSONArray;import net.sf.json.JSONObject; 一：JSONObject//创建JSONObject 1.创建一个空的JSONObject对象JSONObject json=new JSONObject(); 2.创建一个不为null的JSONObject对象JSONObject json=new JS">
+  
+    <link rel="alternate" href="/atom.xml" title="博客|屿哲" type="application/atom+xml">
+  
+
+  
+
+  <link rel="icon" href="/css/images/yuzhe-logo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/yuzhe-logo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+  <script src="/js/bootstrap.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+  <link rel="stylesheet" href="/css/animate.min.css" >
+  <link rel="stylesheet" href="/css/font-awesome.min.css" >
+
+  
+    <link rel="stylesheet" href="/css/dialog.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+  
+  
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+  
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+    <script>
+    (function(){
+        if(){
+            if (prompt('请输入密码') != ){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+  </script>
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/yuzhe-logo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">首页</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">日志</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">分类</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/links">导航</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/myLife">生活</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">留言</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-JSONObject" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      JSONOBject与JSONArray
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2018/07/09/JSONObject/" class="article-date">
+	  <time datetime="2018-07-09T15:05:47.000Z" itemprop="datePublished">2018-07-09</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+
+      
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		阅读量<span id="busuanzi_value_page_pv"></span>
+	</span>
+	</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="需要导入一下jar包"><a href="#需要导入一下jar包" class="headerlink" title="需要导入一下jar包"></a>需要导入一下jar包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import net.sf.json.JSONArray;</span><br><span class="line">import net.sf.json.JSONObject;</span><br></pre></td></tr></table></figure>
+<h1 id="一：JSONObject"><a href="#一：JSONObject" class="headerlink" title="一：JSONObject"></a>一：JSONObject</h1><p>//创建JSONObject</p>
+<h2 id="1-创建一个空的JSONObject对象"><a href="#1-创建一个空的JSONObject对象" class="headerlink" title="1.创建一个空的JSONObject对象"></a>1.创建一个空的JSONObject对象</h2><pre><code>JSONObject json=new JSONObject();
+</code></pre><h2 id="2-创建一个不为null的JSONObject对象"><a href="#2-创建一个不为null的JSONObject对象" class="headerlink" title="2.创建一个不为null的JSONObject对象"></a>2.创建一个不为null的JSONObject对象</h2><pre><code>JSONObject json=new JSONObject(true);
+</code></pre><h2 id="3-创建一个为null的JSONObject对象"><a href="#3-创建一个为null的JSONObject对象" class="headerlink" title="3.创建一个为null的JSONObject对象"></a>3.创建一个为null的JSONObject对象</h2><pre><code>JSONObject json=new JSONObject(false);
+</code></pre><h2 id="4-从一个字符串中创建一个JSONObject对象"><a href="#4-从一个字符串中创建一个JSONObject对象" class="headerlink" title="4.从一个字符串中创建一个JSONObject对象"></a>4.从一个字符串中创建一个JSONObject对象</h2><pre><code>String str=&quot;{key1:value1,key2:value2}&quot;;
+JSONObject json=new JSONObject(str);
+</code></pre><h2 id="5-从一个Map对象中创建一个JSONObject对象"><a href="#5-从一个Map对象中创建一个JSONObject对象" class="headerlink" title="5.从一个Map对象中创建一个JSONObject对象"></a>5.从一个Map对象中创建一个JSONObject对象</h2><pre><code>Map&lt;Object, Object&gt; map=new HashMap&lt;Object, Object&gt;();
+map.put(&quot;key1&quot;, &quot;value1&quot;);
+map.put(&quot;key2&quot;, &quot;value2&quot;);
+map.put( &quot;key3&quot;, new String[]{&quot;a&quot;,&quot;b&quot;} ); 
+JSONObject json=new JSONObject(map);
+</code></pre><h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><pre><code>boolean bool=json.isEmpty();                --//判断是否为空
+boolean bool=json.isNullObject();            --//判断是否为空对象
+json.put(&quot;key&quot;,&quot;value&quot;);                    --//向json中放入key和value
+json.put(String key,Object value);    
+json.put(String key,boolean value);
+json.put(String key,double value);
+json.put(String key,int value);
+json.put(String key,long value);
+json.put(String key,Map value);
+Object obj=json.get(&quot;key&quot;);                    --//根据key得到Object类型的value值
+boolean bool=json.getBoolean(&quot;key&quot;);        --//根据key得到boolean类型的value值
+double dou=json.getDouble(&quot;key&quot;);            --//根据key得到double类型的value值
+int it=json.getInt(&quot;key&quot;);                    --//根据key得到int类型的value值
+String str=json.getString(&quot;key&quot;);            --//根据key得到String类型的value值
+long lng=json.getLong(&quot;key&quot;);                --//根据key得到long类型的value值
+JSONObject json1=json.getJSONObject(&quot;key&quot;);    --//根据key得到JSONObject类型的value值
+JSONArray jsonArr=json.getJSONArray(&quot;key&quot;);    --//根据key得到JSONArray类型的value值
+boolean bool=json.has(&quot;key&quot;)                --//判断json中是否包含key这个键值
+Iterator&lt;Object&gt; its=json.keys();            --//得到json中keys的迭代器
+int it=json.length();                        --//得到json的长度,即包含的key的个数
+</code></pre><h2 id="JSONObject的静态方法"><a href="#JSONObject的静态方法" class="headerlink" title="JSONObject的静态方法"></a>JSONObject的静态方法</h2><pre><code>JSONObject json=JSONObject.fromMap(Map map);--//从一个MAP对象初始化JSONObject
+String str=&quot;{key1:value1,key2:value2}&quot;;
+JSONObject json=JSONObject.fromString(str); --//从一个字符串对象初始化JSONObject
+JSONObject json=JSONObject.fromObject(str);    --//从一个Object对象来初始化JSONObject
+</code></pre><h1 id="二：JSONArray"><a href="#二：JSONArray" class="headerlink" title="二：JSONArray"></a>二：JSONArray</h1><h2 id="创建JSONArray对象"><a href="#创建JSONArray对象" class="headerlink" title="创建JSONArray对象"></a>创建JSONArray对象</h2><h2 id="1-创建一个空的JSONArray对象"><a href="#1-创建一个空的JSONArray对象" class="headerlink" title="1.创建一个空的JSONArray对象"></a>1.创建一个空的JSONArray对象</h2><pre><code>JSONArray jsonArr=new JSONArray();    
+</code></pre><h2 id="2-基于数组or集合创建一个JSONArray对象"><a href="#2-基于数组or集合创建一个JSONArray对象" class="headerlink" title="2.基于数组or集合创建一个JSONArray对象"></a>2.基于数组or集合创建一个JSONArray对象</h2><pre><code>String[] strArr={&quot;value1&quot;,&quot;value2&quot;,&quot;value3&quot;};    //字符串数组
+char[] chArr={&apos;a&apos;,&apos;b&apos;,&apos;c&apos;};                        //字符数组
+boolean[] boolArr={false,true,false};            //boolean数组
+double[] douArr={12.1,10.1};                    //double数组
+float[] fltArr={12.3,7.8};                        //float数组
+int[] intArr={1,2,3};                            //int数组
+String str=&quot;[1,2,3]&quot;;                            //String字符串
+List&lt;String&gt; list=new ArrayList&lt;String&gt;();        //list集合
+list.add(&quot;value1&quot;);
+list.add(&quot;value2&quot;);
+JSONArray jsonArr=new JSONArray(strArr/chArr/boolArr/douArr/intArr/str/list);
+</code></pre><h2 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h2><pre><code>boolean bool=jsonArr.isEmpty();                        --//判断JSONArray是否为空
+Object[] objArr=jsonArr.toArray();                    --//将JSONArray转换成array数组
+Object obj=jsonArr.get(int index);                    --//得到指定index下标的对象
+boolean bool=jsonArr.getBoolean(int index);            --//得到指定index下标的Boolean对象
+double dou=jsonArr.getDouble(int index);            --//得到指定index下标的double数据
+int it=jsonArr.getInt(int index);                    --//得到指定index下标的int数据
+String str=jsonArr.getString(int index);            --//得到指定index下标的String数据
+long lng=jsonArr.getLong(int index);                --//得到指定index下标的long数据
+JSONArray jsArr=jsonArr.getJSONArray(int index);    --//得到指定index下标的JSONArray对象
+JSONObject json=jsonArr.getJSONObject(int index);    --//得到指定index下标的JSONObject对象
+jsonArr.put(boolean value);                            --//将boolean值添加到JSONArray中
+jsonArr.put(Collection value);                        --//将集合添加到JSONArray中
+jsonArr.put(double value);                            --//将double值添加到JSONArray中
+jsonArr.put(int value);                                --//将int值添加到JSONArray中
+jsonArr.put(Long value);                            --//将long值添加到JSONArray中
+jsonArr.put(Map value);                                --//将Map对象添加到JSONArray中
+jsonArr.put(Object value);                            --//将Object对象添加到JSONArray中
+jsonArr.put(int index,Object value);                --//将指定的value值添加到指定的下标下
+Iterator&lt;Object&gt; it=jsonArr.iteartor();                --//将JSONArray生成迭代器
+</code></pre><h2 id="JSONArray的静态方法"><a href="#JSONArray的静态方法" class="headerlink" title="JSONArray的静态方法"></a>JSONArray的静态方法</h2><pre><code>Object[] objArr={1,2,3,4};    
+JSONArray.fromArray(ObjArr);                        --//从array数组中获取JSONArray
+List&lt;String&gt; list=new ArrayList&lt;String&gt;();            
+JSONArray.fromCollection(list);                        --//从list集合中获取JSONArray
+Object obj=&quot;[1,2,3,4]&quot;;    
+JSONArray.fromObject(obj);                            --//从Object中获取JSONArray
+String str=&quot;[1,2,3,4]&quot;;
+JSONArray.fromString(str);                            --//从String字符串中获取JSONArray
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/06/04/Exception-01/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">Exception-01</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#需要导入一下jar包"><span class="nav-number">1.</span> <span class="nav-text">需要导入一下jar包</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一：JSONObject"><span class="nav-number"></span> <span class="nav-text">一：JSONObject</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-创建一个空的JSONObject对象"><span class="nav-number">1.</span> <span class="nav-text">1.创建一个空的JSONObject对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-创建一个不为null的JSONObject对象"><span class="nav-number">2.</span> <span class="nav-text">2.创建一个不为null的JSONObject对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-创建一个为null的JSONObject对象"><span class="nav-number">3.</span> <span class="nav-text">3.创建一个为null的JSONObject对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-从一个字符串中创建一个JSONObject对象"><span class="nav-number">4.</span> <span class="nav-text">4.从一个字符串中创建一个JSONObject对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-从一个Map对象中创建一个JSONObject对象"><span class="nav-number">5.</span> <span class="nav-text">5.从一个Map对象中创建一个JSONObject对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用方法"><span class="nav-number">6.</span> <span class="nav-text">常用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSONObject的静态方法"><span class="nav-number">7.</span> <span class="nav-text">JSONObject的静态方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二：JSONArray"><span class="nav-number"></span> <span class="nav-text">二：JSONArray</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建JSONArray对象"><span class="nav-number">1.</span> <span class="nav-text">创建JSONArray对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-创建一个空的JSONArray对象"><span class="nav-number">2.</span> <span class="nav-text">1.创建一个空的JSONArray对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-基于数组or集合创建一个JSONArray对象"><span class="nav-number">3.</span> <span class="nav-text">2.基于数组or集合创建一个JSONArray对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用方法-1"><span class="nav-number">4.</span> <span class="nav-text">常用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSONArray的静态方法"><span class="nav-number">5.</span> <span class="nav-text">JSONArray的静态方法</span></a></li></ol>
+    
+    </div>
+  </aside>
+
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <!--<p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>-->
+	      <p id="copyRightEn">Copyright &copy; 2007 - 2018 博客|屿哲 All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				访客数 : <span id="busuanzi_value_site_uv"></span> |  
+				访问量 : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f2e196dc72156dd7498a440cbf3920d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/links" class="mobile-nav-link">导航</a>
+  
+    <a href="/myLife" class="mobile-nav-link">生活</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/scripts.js"></script>
+
+
+
+
+  <script src="/js/dialog.js"></script>
+
+
+
+
+
+
+
+
+
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+	</script>
+
+
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            博客|屿哲
+          </div>
+          <div class="panel-body">
+            Copyright © 2018 Yuzhe Von All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
+  
+  
+  <script type="text/javascript" src="/js/love.js?v=1.0.0" async=""></script>
+ 
+ 
+
+ </body>
+</html>
