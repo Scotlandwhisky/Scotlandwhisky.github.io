@@ -313,138 +313,16 @@
     &lt;version&gt;2.4&lt;/version&gt;
 &lt;/dependency&gt;
 </code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import net.sf.json.JSONArray;</span><br><span class="line"></span><br><span class="line">import net.sf.json.JSONObject;</span><br></pre></td></tr></table></figure>
-<h1 id="一：JSONObject"><a href="#一：JSONObject" class="headerlink" title="一：JSONObject"></a>一：JSONObject</h1><h2 id="创建JSONObject"><a href="#创建JSONObject" class="headerlink" title="创建JSONObject"></a>创建JSONObject</h2><h2 id="1-创建一个空的JSONObject对象"><a href="#1-创建一个空的JSONObject对象" class="headerlink" title="1.创建一个空的JSONObject对象"></a>1.创建一个空的JSONObject对象</h2><pre><code>JSONObject json=new JSONObject();
-</code></pre><h2 id="2-创建一个不为null的JSONObject对象"><a href="#2-创建一个不为null的JSONObject对象" class="headerlink" title="2.创建一个不为null的JSONObject对象"></a>2.创建一个不为null的JSONObject对象</h2><pre><code>JSONObject json=new JSONObject(true);
-</code></pre><h2 id="3-创建一个为null的JSONObject对象"><a href="#3-创建一个为null的JSONObject对象" class="headerlink" title="3.创建一个为null的JSONObject对象"></a>3.创建一个为null的JSONObject对象</h2><pre><code>JSONObject json=new JSONObject(false);
-</code></pre><h2 id="4-从一个字符串中创建一个JSONObject对象"><a href="#4-从一个字符串中创建一个JSONObject对象" class="headerlink" title="4.从一个字符串中创建一个JSONObject对象"></a>4.从一个字符串中创建一个JSONObject对象</h2><pre><code>String str=&quot;{key1:value1,key2:value2}&quot;;
-
-JSONObject json=new JSONObject(str);
-</code></pre><h2 id="5-从一个Map对象中创建一个JSONObject对象"><a href="#5-从一个Map对象中创建一个JSONObject对象" class="headerlink" title="5.从一个Map对象中创建一个JSONObject对象"></a>5.从一个Map对象中创建一个JSONObject对象</h2><pre><code>Map&lt;Object, Object&gt; map=new HashMap&lt;Object, Object&gt;();
-map.put(&quot;key1&quot;, &quot;value1&quot;);
-map.put(&quot;key2&quot;, &quot;value2&quot;);
-map.put( &quot;key3&quot;, new String[]{&quot;a&quot;,&quot;b&quot;} ); 
-JSONObject json=new JSONObject(map);
-</code></pre><h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><pre><code>boolean bool=json.isEmpty();                --//判断是否为空
-
-boolean bool=json.isNullObject();            --//判断是否为空对象
-
-json.put(&quot;key&quot;,&quot;value&quot;);                    --//向json中放入key和value
-
-json.put(String key,Object value);    
-
-json.put(String key,boolean value);
-
-json.put(String key,double value);
-
-json.put(String key,int value);
-
-json.put(String key,long value);
-
-json.put(String key,Map value);
-
-Object obj=json.get(&quot;key&quot;);                    --//根据key得到Object类型的value值
-
-boolean bool=json.getBoolean(&quot;key&quot;);        --//根据key得到boolean类型的value值
-
-double dou=json.getDouble(&quot;key&quot;);            --//根据key得到double类型的value值
-
-int it=json.getInt(&quot;key&quot;);                    --//根据key得到int类型的value值
-
-String str=json.getString(&quot;key&quot;);            --//根据key得到String类型的value值
-
-long lng=json.getLong(&quot;key&quot;);                --//根据key得到long类型的value值
-
-JSONObject json1=json.getJSONObject(&quot;key&quot;);    --//根据key得到JSONObject类型的value值
-
-JSONArray jsonArr=json.getJSONArray(&quot;key&quot;);    --//根据key得到JSONArray类型的value值
-
-boolean bool=json.has(&quot;key&quot;)                --//判断json中是否包含key这个键值
-
-Iterator&lt;Object&gt; its=json.keys();            --//得到json中keys的迭代器
-
-int it=json.length();                        --//得到json的长度,即包含的key的个数
-</code></pre><h2 id="JSONObject的静态方法"><a href="#JSONObject的静态方法" class="headerlink" title="JSONObject的静态方法"></a>JSONObject的静态方法</h2><pre><code>JSONObject json=JSONObject.fromMap(Map map);--//从一个MAP对象初始化JSONObject
-
-String str=&quot;{key1:value1,key2:value2}&quot;;
-
-JSONObject json=JSONObject.fromString(str); --//从一个字符串对象初始化JSONObject
-
-JSONObject json=JSONObject.fromObject(str);    --//从一个Object对象来初始化JSONObject
-</code></pre><h1 id="二：JSONArray"><a href="#二：JSONArray" class="headerlink" title="二：JSONArray"></a>二：JSONArray</h1><h2 id="创建JSONArray对象"><a href="#创建JSONArray对象" class="headerlink" title="创建JSONArray对象"></a>创建JSONArray对象</h2><h2 id="1-创建一个空的JSONArray对象"><a href="#1-创建一个空的JSONArray对象" class="headerlink" title="1.创建一个空的JSONArray对象"></a>1.创建一个空的JSONArray对象</h2><pre><code>JSONArray jsonArr=new JSONArray();    
-</code></pre><h2 id="2-基于数组or集合创建一个JSONArray对象"><a href="#2-基于数组or集合创建一个JSONArray对象" class="headerlink" title="2.基于数组or集合创建一个JSONArray对象"></a>2.基于数组or集合创建一个JSONArray对象</h2><pre><code>String[] strArr={&quot;value1&quot;,&quot;value2&quot;,&quot;value3&quot;};    //字符串数组
-
-char[] chArr={&apos;a&apos;,&apos;b&apos;,&apos;c&apos;};                        //字符数组
-
-boolean[] boolArr={false,true,false};            //boolean数组
-
-double[] douArr={12.1,10.1};                    //double数组
-
-float[] fltArr={12.3,7.8};                        //float数组
-
-int[] intArr={1,2,3};                            //int数组
-
-String str=&quot;[1,2,3]&quot;;                            //String字符串
-
-List&lt;String&gt; list=new ArrayList&lt;String&gt;();        //list集合
-
-list.add(&quot;value1&quot;);
-
-list.add(&quot;value2&quot;);
-
-JSONArray jsonArr=new JSONArray(strArr/chArr/boolArr/douArr/intArr/str/list);
-</code></pre><h2 id="常用方法-1"><a href="#常用方法-1" class="headerlink" title="常用方法"></a>常用方法</h2><pre><code>boolean bool=jsonArr.isEmpty();                        --//判断JSONArray是否为空
-
-Object[] objArr=jsonArr.toArray();                    --//将JSONArray转换成array数组
-
-Object obj=jsonArr.get(int index);                    --//得到指定index下标的对象
-
-boolean bool=jsonArr.getBoolean(int index);            --//得到指定index下标的Boolean对象
-
-double dou=jsonArr.getDouble(int index);            --//得到指定index下标的double数据
-
-int it=jsonArr.getInt(int index);                    --//得到指定index下标的int数据
-
-String str=jsonArr.getString(int index);            --//得到指定index下标的String数据
-
-long lng=jsonArr.getLong(int index);                --//得到指定index下标的long数据
-
-JSONArray jsArr=jsonArr.getJSONArray(int index);    --//得到指定index下标的JSONArray对象
-
-JSONObject json=jsonArr.getJSONObject(int index);    --//得到指定index下标的JSONObject对象
-
-jsonArr.put(boolean value);                            --//将boolean值添加到JSONArray中
-
-jsonArr.put(Collection value);                        --//将集合添加到JSONArray中
-
-jsonArr.put(double value);                            --//将double值添加到JSONArray中
-
-jsonArr.put(int value);                                --//将int值添加到JSONArray中
-
-jsonArr.put(Long value);                            --//将long值添加到JSONArray中
-
-jsonArr.put(Map value);                                --//将Map对象添加到JSONArray中
-
-jsonArr.put(Object value);                            --//将Object对象添加到JSONArray中
-
-jsonArr.put(int index,Object value);                --//将指定的value值添加到指定的下标下
-
-Iterator&lt;Object&gt; it=jsonArr.iteartor();                --//将JSONArray生成迭代器
-</code></pre><h2 id="JSONArray的静态方法"><a href="#JSONArray的静态方法" class="headerlink" title="JSONArray的静态方法"></a>JSONArray的静态方法</h2><pre><code>Object[] objArr={1,2,3,4};    
-
-JSONArray.fromArray(ObjArr);                        --//从array数组中获取JSONArray
-
-List&lt;String&gt; list=new ArrayList&lt;String&gt;();            
-
-JSONArray.fromCollection(list);                        --//从list集合中获取JSONArray
-
-Object obj=&quot;[1,2,3,4]&quot;;    
-
-JSONArray.fromObject(obj);                            --//从Object中获取JSONArray
-
-String str=&quot;[1,2,3,4]&quot;;
-
-JSONArray.fromString(str);                            --//从String字符串中获取JSONArray
-</code></pre>
+<h1 id="一：JSONObject"><a href="#一：JSONObject" class="headerlink" title="一：JSONObject"></a>一：JSONObject</h1><h2 id="创建JSONObject"><a href="#创建JSONObject" class="headerlink" title="创建JSONObject"></a>创建JSONObject</h2>
+        <!-- 需要导入一下jar包 &lt;dependency&gt;
+    &lt;groupId&gt;net.sf.json-lib&lt;/groupId&gt;
+    &lt;artifactId&gt;json-lib&lt;/artifactId&gt;
+    &lt;version&gt;2.4&lt;/version&gt;
+&lt;/dependency&gt;
+123impo......  -->
+        <p class="article-more-link">
+          <a href="/2018/07/09/JSONObject/#more">阅读全文</a>
+        </p>
       
     </div>
     <footer class="article-footer">
