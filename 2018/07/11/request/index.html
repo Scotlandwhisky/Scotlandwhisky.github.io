@@ -3,22 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>归档: 2018/7 | 博客|屿哲</title>
+  <title>request | 博客|屿哲</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="thinking in island">
-<meta property="og:type" content="website">
-<meta property="og:title" content="博客|屿哲">
-<meta property="og:url" content="http://yuzhe-tech.com/archives/2018/07/index.html">
+  <meta name="description" content="一 获取URL:getRequestURL() 二 获取参数列表:1.getQueryString()只适用于GET,比如客户端发送http://localhost/testServlet?a=b&amp;amp;c=d&amp;amp;e=f,通过request.getQueryString()得到的是a=b&amp;amp;c=d&amp;amp;e=f.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="request">
+<meta property="og:url" content="http://yuzhe-tech.com/2018/07/11/request/index.html">
 <meta property="og:site_name" content="博客|屿哲">
-<meta property="og:description" content="thinking in island">
+<meta property="og:description" content="一 获取URL:getRequestURL() 二 获取参数列表:1.getQueryString()只适用于GET,比如客户端发送http://localhost/testServlet?a=b&amp;amp;c=d&amp;amp;e=f,通过request.getQueryString()得到的是a=b&amp;amp;c=d&amp;amp;e=f.">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-11T10:17:29.611Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="博客|屿哲">
-<meta name="twitter:description" content="thinking in island">
+<meta name="twitter:title" content="request">
+<meta name="twitter:description" content="一 获取URL:getRequestURL() 二 获取参数列表:1.getQueryString()只适用于GET,比如客户端发送http://localhost/testServlet?a=b&amp;amp;c=d&amp;amp;e=f,通过request.getQueryString()得到的是a=b&amp;amp;c=d&amp;amp;e=f.">
   
     <link rel="alternate" href="/atom.xml" title="博客|屿哲" type="application/atom+xml">
   
@@ -59,8 +60,6 @@
   
 
   
-    <link rel="stylesheet" href="/css/archive.css" >
-  
   
   
 
@@ -68,7 +67,7 @@
 
 
 
-  <body>
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
 
   
   
@@ -100,7 +99,7 @@
             
               <a class="brand" style="
                  margin-top: 0px;"  
-                 >
+                href="#" data-toggle="modal" data-target="#myModal" >
                   <img width="124px" height="124px" alt="Hike News" src="/css/images/yuzhe-logo.jpg">
               </a>
             
@@ -171,185 +170,129 @@
             
       <div id="content" class="outer">
         
-          <section id="main">
-  <div class="archives-tags-wrap"><blockquote><span>共计8篇文章</span></blockquote>
+          <section id="main" style="float:none;"><article id="post-request" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      request
+    </h1>
+  
 
-
-<!-- 分页显示 -->
-
-	
-	
-		
-		
-		  
-		  
-		  <section class="archives-wrap">
-		    <div class="archive-year-wrap">
-		      <h1><a href="/archives/2018" class="archive-year">2018</a></h1>
-		    </div>
-		    <div class="archives">
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
+      </header>
+    
+    <div class="article-meta">
       
-	<a href="/2018/07/11/request/" class="archive-article-date">
+	<a href="/2018/07/11/request/" class="article-date">
 	  <time datetime="2018-07-11T10:07:10.000Z" itemprop="datePublished">2018-07-11</time>
 	</a>
 
       
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2018/07/11/request/">request</a>
-    </h1>
-  
+    <a class="article-category-link" href="/categories/Java/">Java</a>
 
-    </header>
-  </div>
-</article>
-	
-		
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
       
-	<a href="/2018/07/11/jackson/" class="archive-article-date">
-	  <time datetime="2018-07-11T02:26:28.000Z" itemprop="datePublished">2018-07-11</time>
+	<a class="article-views">
+	<span id="busuanzi_container_page_pv">
+		阅读量<span id="busuanzi_value_page_pv"></span>
+	</span>
 	</a>
 
+    </div>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2018/07/11/jackson/">jackson</a>
-    </h1>
-  
+        <h1 id="一-获取URL"><a href="#一-获取URL" class="headerlink" title="一 获取URL:"></a>一 获取URL:</h1><pre><code>getRequestURL()
+</code></pre><h1 id="二-获取参数列表"><a href="#二-获取参数列表" class="headerlink" title="二 获取参数列表:"></a>二 获取参数列表:</h1><h2 id="1-getQueryString"><a href="#1-getQueryString" class="headerlink" title="1.getQueryString()"></a>1.getQueryString()</h2><p>只适用于GET,比如客户端发送<a href="http://localhost/testServlet?a=b&amp;c=d&amp;e=f,通过request.getQueryString()得到的是a=b&amp;c=d&amp;e=f" target="_blank" rel="noopener">http://localhost/testServlet?a=b&amp;c=d&amp;e=f,通过request.getQueryString()得到的是a=b&amp;c=d&amp;e=f</a>.</p>
+<a id="more"></a>
+<h2 id="2-getParameter"><a href="#2-getParameter" class="headerlink" title="2.getParameter()"></a>2.getParameter()</h2><p>GET和POST都可以使用<br>但如果是POST请求要根据<form>表单提交数据的编码方式来确定能否使用.<br>当编码方式是(application/x- www-form-urlencoded)时才能使用.<br>这种编码方式(application/x-www-form-urlencoded)虽然简单，但对于传输大块的二进制数据显得力不从心.<br>对于传输大块的二进制数这类数据，浏览器采用了另一种编码方式(“multipart/form-data”),这时就需要使用下面的两种方法.</form></p>
+<h2 id="3-getInputStream"><a href="#3-getInputStream" class="headerlink" title="3.getInputStream()"></a>3.getInputStream()</h2><h2 id="4-getReader"><a href="#4-getReader" class="headerlink" title="4.getReader()"></a>4.getReader()</h2><p>上面两种方法获取的是Http请求包的包体,因为GET方式请求一般不包含包体.所以上面两种方法一般用于POST请求获取参数.</p>
+<p>需要注意的是：<br>request.getParameter()、 request.getInputStream()、request.getReader()这三种方法是有冲突的，因为流只能被读一次。<br>比如：<br>当form表单内容采用 enctype=application/x-www-form-urlencoded编码时，先通过调用request.getParameter()方法得到参数后,<br>再调用request.getInputStream()或request.getReader()已经得不到流中的内容，<br>因为在调用 request.getParameter()时系统可能对表单中提交的数据以流的形式读了一次,反之亦然。</p>
+<p>当form表单内容采用 enctype=multipart/form-data编码时，即使先调用request.getParameter()也得不到数据，<br>所以这时调用request.getParameter()方法对 request.getInputStream()或request.getReader()没有冲突，<br>即使已经调用了 request.getParameter()方法也可以通过调用request.getInputStream()或request.getReader()得到表单中的数据,<br>而request.getInputStream()和request.getReader()在同一个响应中是不能混合使用的,如果混合使用就会抛异常。</p>
+<h1 id="三-其他常用API"><a href="#三-其他常用API" class="headerlink" title="三 其他常用API"></a>三 其他常用API</h1><pre><code>setAttribute(String name,Object)：设置名字为name的request的参数值
 
-    </header>
+getAttribute(String name)：返回由name指定的属性值
+
+getAttributeNames()：返回request对象所有属性的名字集合，结果是一个枚举的实例
+
+getCookies()：返回客户端的所有Cookie对象，结果是一个Cookie数组
+
+getCharacterEncoding()：返回请求中的字符编码方式
+
+getContentLength()：返回请求的Body的长度
+
+getHeader(String name)：获得HTTP协议定义的文件头信息
+
+getHeaders(String name)：返回指定名字的request Header的所有值，结果是一个枚举的实例
+
+getHeaderNames()：返回所以request Header的名字，结果是一个枚举的实例
+
+getInputStream()：返回请求的输入流，用于获得请求中的数据
+
+getMethod()：获得客户端向服务器端传送数据的方法
+
+getParameter(String name)：获得客户端传送给服务器端的有name指定的参数值
+
+getParameterNames()：获得客户端传送给服务器端的所有参数的名字，结果是一个枚举的实例
+
+getParameterValues(String name)：获得有name指定的参数的所有值
+
+getProtocol()：获取客户端向服务器端传送数据所依据的协议名称
+
+getQueryString()：获得查询字符串
+
+getRequestURI()：获取发出请求字符串的客户端地址
+
+getRemoteAddr()：获取客户端的IP地址
+
+getRemoteHost()：获取客户端的名字
+
+getSession([Boolean create])：返回和请求相关Session
+
+getServerName()：获取服务器的名字
+
+getServletPath()：获取客户端所请求的脚本文件的路径
+
+getServerPorti()：获取服务器的端口号
+
+removeAttribute(String name)：删除请求中的一个属性
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+    </footer>
   </div>
-</article>
-	
-		
-		
-		<article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-	<a href="/2018/07/09/JSONObject/" class="archive-article-date">
-	  <time datetime="2018-07-09T15:05:47.000Z" itemprop="datePublished">2018-07-09</time>
-	</a>
-
-      
   
-    <h1 class="thumb" itemprop="name">
-      <a class="archive-article-title" href="/2018/07/09/JSONObject/">JSONObject与JSONArray</a>
-    </h1>
+    
+<nav id="article-nav">
   
+  
+    <a href="/2018/07/11/jackson/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">jackson</div>
+    </a>
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-	
-	
-		</div></section>
-	
 
-	<!-- 页数指示器 -->
-	
+<!-- Table of Contents -->
 
-
-
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一-获取URL"><span class="nav-number">1.</span> <span class="nav-text">一 获取URL:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二-获取参数列表"><span class="nav-number">2.</span> <span class="nav-text">二 获取参数列表:</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-getQueryString"><span class="nav-number">2.1.</span> <span class="nav-text">1.getQueryString()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-getParameter"><span class="nav-number">2.2.</span> <span class="nav-text">2.getParameter()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-getInputStream"><span class="nav-number">2.3.</span> <span class="nav-text">3.getInputStream()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-getReader"><span class="nav-number">2.4.</span> <span class="nav-text">4.getReader()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三-其他常用API"><span class="nav-number">3.</span> <span class="nav-text">三 其他常用API</span></a></li></ol>
+    
+    </div>
+  </aside>
 
 </section>
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">关注我</h3>
-    <div class="widget widget_athemes_social_icons">
-
-    	<ul class="clearfix widget-social-icons">   
-    	
-          
-     			  <li><a href="https://weibo.com/scotlandwhisky" title="Weibo"><i class="fa fa-weibo" aria-hidden="true"></i></a></li> 
-          
-   		
-   		</ul>
-
-
-   		<!--
-   		<ul class="clearfix widget-social-icons">   		
-   		<li class="widget-si-twitter"><a href="http://twitter.com" title="Twitter"><i class="ico-twitter"></i></a></li> 
-		<li class="widget-si-facebook"><a href="http://facebook.com" title="Facebook"><i class="ico-facebook"></i></a></li>
-			<li class="widget-si-gplus"><a href="http://plus.google.com" title="Google+"><i class="ico-gplus"></i></a></li>
-			<li class="widget-si-pinterest"><a href="http://pinterest.com" title="Pinterest"><i class="ico-pinterest"></i></a></li>
-			<li class="widget-si-flickr"><a href="http://flickr.com" title="Flickr"><i class="ico-flickr"></i></a></li>
-			<li class="widget-si-instagram"><a href="http://instagram.com" title="Instagram"><i class="ico-instagram"></i></a></li>
-		</ul> -->
-
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">6</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a><span class="archive-list-count">2</span></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2018/07/11/request/">request</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/11/jackson/">jackson</a>
-          </li>
-        
-          <li>
-            <a href="/2018/07/09/JSONObject/">JSONObject与JSONArray</a>
-          </li>
-        
-          <li>
-            <a href="/2018/06/04/Exception-01/">Exception-01</a>
-          </li>
-        
-          <li>
-            <a href="/2017/11/04/alibaba/">阿里巴巴Java开发手册</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
         
       </div>
       
@@ -458,6 +401,8 @@ var _hmt = _hmt || [];
 
 
 
+  <script src="/js/dialog.js"></script>
+
 
 
 
@@ -538,6 +483,8 @@ var _hmt = _hmt || [];
   
   <a id="rocket" href="#top" class=""></a>
   <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+    <a id="menu-switch"><i class="fa fa-bars fa-lg"></i></a>
   
   
   <script type="text/javascript" src="/js/love.js?v=1.0.0" async=""></script>
