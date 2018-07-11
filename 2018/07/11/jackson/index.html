@@ -3,23 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>阿里巴巴java开发手册 | 博客|屿哲</title>
+  <title>jackson | 博客|屿哲</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
   
-  <meta name="description" content="《阿里巴巴Java开发手册》最新详尽版： 说明： 该书是阿里内部Java工程师所遵循的开发规范，涵盖编程规约、单元测试规约、异常日志规约、MySQL规约、工程规约、安全规约等。让我们一起码出高效、码出质量。">
+  <meta name="description" content="导包&amp;lt;dependency&amp;gt;       &amp;lt;groupId&amp;gt;com.fasterxml.jackson.core&amp;lt;/groupId&amp;gt;       &amp;lt;artifactId&amp;gt;jackson-annotations&amp;lt;/artifactId&amp;gt;       &amp;lt;version&amp;gt;2.2.3&amp;lt;/version&amp;gt;   &amp;lt;/de">
 <meta property="og:type" content="article">
-<meta property="og:title" content="阿里巴巴Java开发手册">
-<meta property="og:url" content="http://yuzhe-tech.com/2017/11/04/阿里开发规范/index.html">
+<meta property="og:title" content="jackson">
+<meta property="og:url" content="http://yuzhe-tech.com/2018/07/11/jackson/index.html">
 <meta property="og:site_name" content="博客|屿哲">
-<meta property="og:description" content="《阿里巴巴Java开发手册》最新详尽版： 说明： 该书是阿里内部Java工程师所遵循的开发规范，涵盖编程规约、单元测试规约、异常日志规约、MySQL规约、工程规约、安全规约等。让我们一起码出高效、码出质量。">
+<meta property="og:description" content="导包&amp;lt;dependency&amp;gt;       &amp;lt;groupId&amp;gt;com.fasterxml.jackson.core&amp;lt;/groupId&amp;gt;       &amp;lt;artifactId&amp;gt;jackson-annotations&amp;lt;/artifactId&amp;gt;       &amp;lt;version&amp;gt;2.2.3&amp;lt;/version&amp;gt;   &amp;lt;/de">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-10T09:43:51.285Z">
+<meta property="og:updated_time" content="2018-07-11T02:35:52.647Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="阿里巴巴Java开发手册">
-<meta name="twitter:description" content="《阿里巴巴Java开发手册》最新详尽版： 说明： 该书是阿里内部Java工程师所遵循的开发规范，涵盖编程规约、单元测试规约、异常日志规约、MySQL规约、工程规约、安全规约等。让我们一起码出高效、码出质量。">
+<meta name="twitter:title" content="jackson">
+<meta name="twitter:description" content="导包&amp;lt;dependency&amp;gt;       &amp;lt;groupId&amp;gt;com.fasterxml.jackson.core&amp;lt;/groupId&amp;gt;       &amp;lt;artifactId&amp;gt;jackson-annotations&amp;lt;/artifactId&amp;gt;       &amp;lt;version&amp;gt;2.2.3&amp;lt;/version&amp;gt;   &amp;lt;/de">
   
     <link rel="alternate" href="/atom.xml" title="博客|屿哲" type="application/atom+xml">
   
@@ -170,7 +170,7 @@
             
       <div id="content" class="outer">
         
-          <section id="main" style="float:none;"><article id="post-阿里开发规范" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+          <section id="main" style="float:none;"><article id="post-jackson" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
     
@@ -178,7 +178,7 @@
         
   
     <h1 class="thumb" class="article-title" itemprop="name">
-      阿里巴巴Java开发手册
+      jackson
     </h1>
   
 
@@ -186,8 +186,8 @@
     
     <div class="article-meta">
       
-	<a href="/2017/11/04/阿里开发规范/" class="article-date">
-	  <time datetime="2017-11-04T15:05:47.000Z" itemprop="datePublished">2017-11-04</time>
+	<a href="/2018/07/11/jackson/" class="article-date">
+	  <time datetime="2018-07-11T02:26:28.000Z" itemprop="datePublished">2018-07-11</time>
 	</a>
 
       
@@ -203,9 +203,58 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p> <a href="https://102.alibaba.com/downloadFile.do?file=1528269849853/Java_manual.pdf" target="_blank" rel="noopener">《阿里巴巴Java开发手册》最新详尽版：</a></p>
-<h2 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h2><p><strong> 该书是阿里内部Java工程师所遵循的开发规范，涵盖编程规约、单元测试规约、异常日志规约、MySQL规约、工程规约、安全规约等。<br>让我们一起码出高效、码出质量。</strong></p>
+        <h2 id="导包"><a href="#导包" class="headerlink" title="导包"></a>导包</h2><pre><code>&lt;dependency&gt;
+      &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
+      &lt;artifactId&gt;jackson-annotations&lt;/artifactId&gt;
+      &lt;version&gt;2.2.3&lt;/version&gt;
+  &lt;/dependency&gt;
+  &lt;dependency&gt;
+      &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
+      &lt;artifactId&gt;jackson-core&lt;/artifactId&gt;
+      &lt;version&gt;2.2.3&lt;/version&gt;
+  &lt;/dependency&gt;
+  &lt;dependency&gt;
+      &lt;groupId&gt;com.fasterxml.jackson.core&lt;/groupId&gt;
+      &lt;artifactId&gt;jackson-databind&lt;/artifactId&gt;
+      &lt;version&gt;2.2.3&lt;/version&gt;
+  &lt;/dependency&gt;
+</code></pre><a id="more"></a>
+<h2 id="将java对象转换成json字符串"><a href="#将java对象转换成json字符串" class="headerlink" title="将java对象转换成json字符串"></a>将java对象转换成json字符串</h2><pre><code>/**
+ * 使用jackson api将java对象转换
+ * 成json字符串
+ * @throws JsonProcessingException 
+ */
+public static void test1() 
+        throws JsonProcessingException{
+    Stock s = new Stock();
+    s.setCode(&quot;600877&quot;);
+    s.setName(&quot;中国嘉陵&quot;);
+    s.setPrice(8);
+    //jackson api
+    ObjectMapper om = 
+            new ObjectMapper();
+    String jsonStr = 
+            om.writeValueAsString(s);
+    System.out.println(jsonStr);
+}
 
+public static void test2() throws JsonProcessingException{
+    List&lt;Stock&gt; stocks = 
+            new ArrayList&lt;Stock&gt;();
+    for(int i = 0; i &lt; 3; i ++){
+        Stock s = new Stock();
+        s.setCode(&quot;60087&quot; + i);
+        s.setName(&quot;中国嘉陵&quot; + i);
+        s.setPrice(8 + i);
+        stocks.add(s);
+    }
+    ObjectMapper om = 
+            new ObjectMapper();
+    String jsonStr = 
+            om.writeValueAsString(stocks);
+    System.out.println(jsonStr);
+}
+</code></pre>
       
     </div>
     <footer class="article-footer">
@@ -218,19 +267,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/11/04/spring01/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">上一篇</strong>
-      <div class="article-nav-title">
-        
-          Spring
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/08/17/BD-CHECK/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/07/09/JSONObject/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">BD_CHECK</div>
+      <div class="article-nav-title">JSONObject与JSONArray</div>
     </a>
   
 </nav>
@@ -244,7 +284,7 @@
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#说明："><span class="nav-number">1.</span> <span class="nav-text">说明：</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#导包"><span class="nav-number">1.</span> <span class="nav-text">导包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将java对象转换成json字符串"><span class="nav-number">2.</span> <span class="nav-text">将java对象转换成json字符串</span></a></li></ol>
     
     </div>
   </aside>
