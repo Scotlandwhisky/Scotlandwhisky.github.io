@@ -280,6 +280,48 @@
         
           <section id="main" style="float:none;">
   
+    <article id="post-iis-recovery"  class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" itemprop="name">
+      <a class="article-title" href="/2018/07/19/iis-recovery/">iis-recovery</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2018/07/19/iis-recovery/" class="article-date">
+	  <time datetime="2018-07-19T10:57:53.000Z" itemprop="datePublished">2018-07-19</time>
+	</a>
+
+      
+      
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="window-server2012-R2-卸载iis后，远程连接黑屏解决办法。"><a href="#window-server2012-R2-卸载iis后，远程连接黑屏解决办法。" class="headerlink" title="window server2012 R2 卸载iis后，远程连接黑屏解决办法。"></a>window server2012 R2 卸载iis后，远程连接黑屏解决办法。</h1><h2 id="用dism命令，具体命令如下："><a href="#用dism命令，具体命令如下：" class="headerlink" title="用dism命令，具体命令如下："></a>用dism命令，具体命令如下：</h2><pre><code>dism /online /enable-feature /all /featurename:servercore-fullserver /featurename:server-gui-shell /featurename:server-gui-mgmt
+</code></pre><h2 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h2><p>cmd 恢复过程刚开始有点慢耐心等待。。。。过1至2分钟，就会 有数字滚动从  0% ~100%,<br>最后提示服务器要重启，输入  Y（重启）。<br>再次连接服务器，就会登录上服务器。桌面也显示了。    </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+<!-- Table of Contents -->
+
+  
     <article id="post-request"  class="article article-type-post" itemscope itemprop="blogPost" >
   <div id="articleInner" class="article-inner">
     
